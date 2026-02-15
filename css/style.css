@@ -1,0 +1,641 @@
+:root {
+    /* Base Colors */
+    --bg-dark: #0B101B;       /* Casi negro, muy Astro */
+    --bg-card: #171C28;       /* Un poco más claro */
+    --text-main: #ffffff;
+    --text-muted: #8F9BB3;
+    
+    /* El "Glow" Azul/Violeta característico */
+    --primary-glow: #4F46E5;  /* Indigo brillante */
+    --secondary-glow: #0EA5E9; /* Cyan brillante */
+    
+    /* Gradientes */
+    --gradient-text: linear-gradient(45deg, #4F46E5, #0EA5E9, #6ae8fa);
+    --gradient-border: linear-gradient(45deg, rgba(79, 70, 229, 0.3), rgba(14, 165, 233, 0.3));
+    
+    --font-main: 'Inter', sans-serif;
+    --font-code: 'Fira Code', monospace;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    background-image: radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.15), transparent 40%);
+    min-height: 100vh;
+}
+
+/* Tipografía Estilo Astro */
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+/* Texto con Gradiente */
+.text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Header Flotante */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(11, 16, 27, 0.6);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo { font-family: var(--font-code); font-weight: 700; font-size: 1.2rem; letter-spacing: -1px;}
+
+nav ul { display: flex; gap: 2rem; list-style: none; }
+nav ul li a { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+nav ul li a:hover { color: white; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+
+/* --- GRID MÁGICO (Bento Grid) --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 5%;
+}
+
+/* Tarjetas Interactivas estilo Astro */
+.astro-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    cursor: pointer;
+}
+
+/* Efecto Hover: Sube un poco, brilla el borde y aparece sombra de color */
+.astro-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79, 70, 229, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.3);
+}
+
+.astro-card h3 { margin-bottom: 0.5rem; font-size: 1.5rem; }
+.astro-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+/* Tags pequeñas */
+.tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--secondary-glow);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Botones con brillo */
+.btn-glow {
+    background: var(--primary-glow);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px; /* Redondo */
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+    transition: 0.3s;
+    display: inline-block;
+}
+.btn-glow:hover {
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.6);
+    transform: scale(1.05);
+}
+
+/* --- GRID DE EQUIPO (Versión 4 Columnas Exactas) --- */
+.team-grid {
+    display: grid;
+    /* Móvil y Tablets: Se acomodan automáticamente (1 o 2 columnas) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 5%;
+    max-width: 1400px; /* Opcional: Para que no se estire demasiado en pantallas gigantes */
+    margin: 0 auto;
+}
+
+/* Desktop: Forzamos exactamente 4 columnas */
+@media (min-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.member-card {
+    background: linear-gradient(180deg, var(--bg-card) 0%, rgba(23, 28, 40, 0.5) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: 0.3s;
+}
+.member-card:hover { border-color: var(--secondary-glow); }
+
+.member-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary-glow);
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
+}
+
+.cv-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--secondary-glow);
+    padding-bottom: 2px;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    nav ul { display: none; } /* Recuerda agregar el JS del menú anterior */
+}
+/* --- ACORDEÓN PARA EL EQUIPO --- */
+
+/* Contenedor de los detalles ocultos */
+.cv-details {
+    max-height: 0;           /* Altura inicial 0 (cerrado) */
+    opacity: 0;              /* Invisible */
+    overflow: hidden;        /* Esconde el contenido que sobra */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave estilo Apple */
+    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0;
+}
+
+/* Estado ACTIVO (Cuando se abre con JS) */
+.member-card.active .cv-details {
+    max-height: 500px;       /* Altura suficiente para mostrar todo */
+    opacity: 1;              /* Visible */
+    margin-top: 1.5rem;      /* Espacio con la foto */
+    padding-top: 1rem;
+}
+
+/* Cambio de color de la tarjeta al estar activa */
+.member-card.active {
+    background: linear-gradient(180deg, var(--bg-card) 0%, rgba(79, 70, 229, 0.1) 100%);
+    border-color: var(--primary-glow);
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.15);
+}
+
+/* Estilo para las listas dentro del CV */
+.cv-details ul {
+    text-align: left;
+    list-style: none;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.cv-details ul li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Pequeño punto brillante para la lista */
+.cv-details ul li::before {
+    content: "•";
+    color: var(--secondary-glow);
+    font-size: 1.2rem;
+}
+
+/* Botón toggle */
+.cv-toggle {
+    background: transparent;
+    border: 1px solid var(--secondary-glow);
+    color: var(--secondary-glow);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: 0.3s;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cv-toggle:hover {
+    background: var(--secondary-glow);
+    color: white;
+}
+
+/* Rotación de la flechita del botón */
+.arrow-icon {
+    transition: transform 0.3s;
+}
+.member-card.active .arrow-icon {
+    transform: rotate(180deg); /* Gira la flecha al abrir */
+}
+/* --- ESTILOS PARA EL BLOG/NOTICIAS --- */
+
+/* Ajuste de imagen en tarjeta */
+.news-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.news-date {
+    font-size: 0.75rem;
+    color: var(--secondary-glow);
+    margin-bottom: 0.5rem;
+    display: block;
+    font-family: var(--font-code);
+}
+
+.news-source {
+    background: rgba(255,255,255,0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    color: white;
+    margin-left: 10px;
+}
+
+/* Spinner de Carga (Loader) */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255,255,255,0.1);
+    border-left-color: var(--primary-glow);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* --- ESTILOS DE FILTROS --- */
+
+.filter-btn {
+    background: transparent; /* Por defecto transparente */
+    border: 1px solid var(--primary-glow);
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Estado Hover */
+.filter-btn:hover {
+    background: rgba(79, 70, 229, 0.1);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ESTADO ACTIVO (Cuando se selecciona la categoría) */
+.filter-btn.active {
+    background: var(--primary-glow); /* Relleno sólido */
+    color: white;
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+    border-color: transparent;
+}
+/* --- GITHUB STYLE UPGRADE --- */
+
+/* Fondo con patrón de cuadrícula sutil */
+body {
+    background-color: #0d1117; /* GitHub Dark */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* 1. Línea de Tiempo (El hilo conductor izquierdo) */
+.guide-line {
+    position: absolute;
+    left: 20px;
+    top: 100px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #38bdf8 0%, rgba(56, 189, 248, 0) 100%);
+    z-index: 0;
+}
+@media (min-width: 768px) {
+    .guide-line { left: 50%; transform: translateX(-50%); } /* Centrada en desktop */
+}
+/* --- AJUSTES RESPONSIVOS ESPECÍFICOS --- */
+
+/* Cuando la pantalla tenga un ancho MÁXIMO de 768px (Tablet vertical y Móviles) */
+@media (max-width: 768px) {
+    /* Seleccionamos la línea guía y la ocultamos */
+    .guide-line {
+        display: none;
+    }
+}
+
+/* 2. Efecto Globo/Planeta (Simulación CSS 3D) */
+.globe-container {
+    perspective: 1000px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+}
+.globe {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotateGlobe 20s linear infinite;
+    background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.1), transparent);
+    box-shadow: 0 0 50px rgba(56, 189, 248, 0.2) inset;
+}
+/* Anillos del globo */
+.ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%; height: 100%;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.ring:nth-child(1) { transform: translate(-50%, -50%) rotateY(0deg); }
+.ring:nth-child(2) { transform: translate(-50%, -50%) rotateY(60deg); }
+.ring:nth-child(3) { transform: translate(-50%, -50%) rotateY(120deg); }
+.ring:nth-child(4) { transform: translate(-50%, -50%) rotateX(90deg); }
+
+@keyframes rotateGlobe {
+    from { transform: rotateY(0deg) rotateX(20deg); }
+    to { transform: rotateY(360deg) rotateX(20deg); }
+}
+
+/* 3. Terminal de Código (Window) */
+.code-window {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+    font-family: 'Fira Code', monospace;
+    text-align: left;
+    margin-top: 2rem;
+    position: relative;
+}
+.window-header {
+    background: #0d1117;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #30363d;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+.code-content {
+    padding: 20px;
+    color: #c9d1d9;
+    font-size: 0.9rem;
+}
+.keyword { color: #ff7b72; } /* Rojo/Rosa */
+.string { color: #a5d6ff; }  /* Azul claro */
+.func { color: #d2a8ff; }    /* Violeta */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: #38bdf8;
+    animation: blink 1s infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* 4. Grid de Tipos de IA (Estilo Bento) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 4rem 5%;
+    position: relative;
+    z-index: 1;
+}
+.feature-card {
+    background: linear-gradient(145deg, #161b22, #0d1117);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.feature-card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.1);
+}
+/* Icono brillante */
+.icon-box {
+    width: 50px; height: 50px;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; color: #38bdf8;
+    margin-bottom: 1rem;
+}
+/* --- NUEVAS INTERACCIONES (V3) --- */
+
+/* 1. INFINITE LOGO MARQUEE (Carrusel de IAs) */
+.marquee-container {
+    overflow: hidden;
+    padding: 3rem 0;
+    background: linear-gradient(to right, #0d1117 0%, transparent 20%, transparent 80%, #0d1117 100%);
+    position: relative;
+    border-bottom: 1px solid #30363d;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 4rem;
+    width: max-content;
+    animation: scrollLeft 30s linear infinite;
+}
+
+.marquee-content img {
+    height: 40px;
+    opacity: 0.5;
+    transition: opacity 0.3s, filter 0.3s;
+    filter: grayscale(100%); /* Blanco y negro por defecto */
+}
+
+.marquee-content img:hover {
+    opacity: 1;
+    filter: grayscale(0%); /* Color al pasar el mouse */
+    cursor: pointer;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Mueve la mitad porque duplicaremos los logos */
+}
+
+/* 2. GRID ESTILO ASTRO (Características Técnicas) */
+.astro-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    padding: 4rem 5%;
+}
+
+.feature-box {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto Hover estilo GitHub/Astro */
+.feature-box:hover {
+    border-color: #8b949e;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+}
+
+.feature-box h3 { margin-bottom: 0.5rem; color: #fff; font-size: 1.2rem; }
+.feature-box p { color: #8b949e; font-size: 0.9rem; line-height: 1.6; }
+
+/* Grid de fondo decorativo dentro de la tarjeta */
+.grid-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 3. FOOTER ESTILO GITHUB (Complejo) */
+.github-footer {
+    background-color: #161b22;
+    padding: 4rem 5% 2rem;
+    border-top: 1px solid #30363d;
+    font-size: 0.85rem;
+    color: #7d8590;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Logo grande + 3 columnas */
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.5rem; }
+.footer-col a { color: #7d8590; text-decoration: none; }
+.footer-col a:hover { color: #38bdf8; text-decoration: underline; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid #30363d;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-icons a { margin-left: 1rem; font-size: 1.2rem; color: #7d8590; }
+.social-icons a:hover { color: #fff; }
+
+@media (max-width: 768px) {
+    .footer-top { grid-template-columns: 1fr; }
+}
+/* --- AJUSTE GLOBAL DE ENLACES --- */
+a {
+    text-decoration: none; /* ESTO ES LA CLAVE: Quita la línea de abajo */
+    color: inherit; /* Hereda el color del padre (opcional, para evitar el azul por defecto) */
+}
+
+/* Si quieres asegurarte al 100% que los botones tampoco lo tengan */
+.btn-glow, .btn {
+    text-decoration: none !important;
+}
+
+/* Opcional: Que aparezca la línea SOLO cuando pasas el mouse por encima en el menú */
+nav ul li a:hover {
+    text-decoration: none; /* O 'underline' si te gusta ese efecto clásico */
+    opacity: 0.8;
+}
+/* --- LÓGICA DEL MENÚ RESPONSIVO --- */
+
+/* 1. ESTADO DE ESCRITORIO (Desktop First) */
+/* Por defecto, en pantallas grandes, el icono de hamburguesa NO existe */
+.menu-toggle {
+    display: none; 
+}
+
+/* Aseguramos que la lista de enlaces SI se vea en escritorio */
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+/* 2. ESTADO MÓVIL (Cuando la pantalla mide menos de 768px) */
+@media (max-width: 768px) {
+    
+    /* Ahora SI mostramos el icono */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: white; /* Asegura que sea blanco */
+    }
+
+    /* Ocultamos la lista de enlaces (hasta que se active con JS) */
+    nav ul {
+        display: none; /* Se oculta */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: #161b22; /* Fondo oscuro del menú desplegable */
+        border-bottom: 1px solid #30363d;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    /* Esta clase la agrega el JS cuando das click, así que le decimos "muéstrate" */
+    nav ul.active {
+        display: flex;
+    }
+}

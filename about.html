@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo web | Nuestro Equipo</title>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/logo-uls.png" alt="ULS Logo" style="height: 40px;">
+            <span></span>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="about.html">Equipo</a></li>
+                <li><a href="blog.html">Artículos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section style="text-align: center; padding: 4rem 1rem 2rem;">
+            <h1>Conoce al <span class="text-gradient">Equipo</span></h1>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">
+                Somos un grupo de 4 estudiantes apasionados por los cambios tecnologicos de la actualidad. Aquí puedes conocer nuestra trayectoria y ver nuestras hojas de vida.
+            </p>
+        </section>
+
+        <div class="team-grid">
+
+            <div class="member-card">
+                <img src="assets/Geovani.png" alt="Foto Ana" class="member-img">
+                <h3>Jose Geovani Valladares</h3>
+                <p style="color: var(--secondary-glow); font-size: 0.9rem; margin-bottom: 0.5rem;"> Estudiante de Ciencias de la Computación</p>
+                
+                <button class="cv-toggle">Ver Hoja de Vida <span class="arrow-icon">▼</span></button>
+                
+                <div class="cv-details">
+                    <h4 style="font-size: 0.9rem; color: white;">Formación:</h4>
+        <p style="font-size: 0.85rem; text-align: left; color: var(--text-muted);">
+            Universidad Luterana Salvadoreña 
+        </p>
+                    <h4 style="font-size: 0.9rem; color: white; margin-bottom: 0.5rem;">Conocimientos</h4>
+                    <ul>
+                        <li>HTML5, CSS3, Node.js</li>
+                        <li>JavaScript, php</li>
+                        <li>Python, Larabel</li>
+                        <li>WordPress, GitHub</li>
+                    </ul>
+                    <h4 style="font-size: 0.9rem; color: white; margin-top: 1rem; margin-bottom: 0.5rem;">Proyecto Destacados:</h4>
+                    <p style="font-size: 0.85rem; text-align: left; color: var(--text-muted);">
+                        Desarrollo de proyectos académicos utilizando PHP con el framework de Larabel para páginas Web
+                    </p>
+                    <div style="margin-top: 1rem; padding-top: 0.5rem; border-top: 1px dashed rgba(255,255,255,0.1);">
+                        <a href="#" style="color: var(--secondary-glow); font-size: 0.8rem;">geovani25@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member-card">
+    <img src="assets/Caro.png" alt="Foto Carolina Jasmin Martínez" class="member-img">
+    <h3>Carolina Jasmin Martínez</h3>
+    <p style="color: var(--secondary-glow); font-size: 0.9rem; margin-bottom: 0.5rem;">
+        Estudiante de Ciencias de la Computación
+    </p>
+    <button class="cv-toggle">
+        Ver Hoja de Vida <span class="arrow-icon">▼</span>
+    </button>
+
+    <div class="cv-details">
+
+        <h4 style="font-size: 0.9rem; color: white;">Formación:</h4>
+        <p style="font-size: 0.85rem; text-align: left; color: var(--text-muted);">
+            Universidad Luterana Salvadoreña 
+        </p>
+
+        <h4 style="font-size: 0.9rem; color: white; margin-top: 1rem;">Conocimientos:</h4>
+        <ul>
+            <li>PHP (básico)</li>
+            <li>HTML, CSS y JavaScript (básico)</li>
+            <li>MySQL</li>
+            <li>Bootstrap y jQuery (básico)</li>
+            <li>Diagramas UML (básico)</li>
+            <li>Visual Studio Code</li>
+            <li>Kotlin (básico)</li>
+            <li>Jetpack Compose (básico)</li>
+        </ul>
+
+        <h4 style="font-size: 0.9rem; color: white; margin-top: 1rem;">Proyecto Destacado:</h4>
+        <p style="font-size: 0.85rem; text-align: left; color: var(--text-muted);">
+            Desarrollo de proyectos académicos utilizando Kotlin y Jetpack Compose 
+            para la creación de aplicaciones móviles Android.
+        </p>
+
+        <h4 style="font-size: 0.9rem; color: white; margin-top: 1rem;">Bio:</h4>
+        <p style="font-size: 0.85rem; text-align: left; color: var(--text-muted);">
+            Estudiante responsable y organizada, con conocimientos básicos en desarrollo web 
+            y desarrollo de aplicaciones móviles. Interesada en seguir fortaleciendo sus 
+            habilidades técnicas y adquirir experiencia profesional.
+        </p>
+
+        <div style="margin-top: 1rem; padding-top: 0.5rem; border-top: 1px dashed rgba(255,255,255,0.1);">
+            <a href="mailto:carolina@email.com" 
+               style="color: var(--secondary-glow); font-size: 0.8rem;">
+               carolina@email.com
+            </a>
+        </div>
+
+    </div>
+
+            </div>
+
+            <div class="member-card">
+    <img src="assets/Alexis.png" alt="Foto Alexis Guerra" class="member-img">
+    <h3>Alexis Guerra Calles</h3>
+    <p style="color: var(--secondary-glow); font-size: 0.9rem; margin-bottom: 0.5rem;">
+        Estudiante de Ciencias de la Computación
+    </p>
+
+    <button class="cv-toggle">
+        Ver Hoja de Vida <span class="arrow-icon">▼</span>
+    </button>
+
+    <div class="cv-details">
+        <h4 style="font-size: 0.9rem; color: white;">Formación:</h4>
+        <p style="font-size: 0.85rem; text-align: left; color: var(--text-muted);">
+            Universidad Luterana Salvadoreña 
+        </p>
+
+        <h4 style="font-size: 0.9rem; color: white;">Conocimientos:</h4>
+        <ul>
+            <li>Conocimientos básicos en PHP</li>
+            <li>Conocimientos básicos en HTML, CSS y JavaScript</li>
+            <li>Conocimientos básicos en MySQL</li>
+            <li>Conocimientos básicos en Bootstrap y jQuery</li>
+            <li>Conocimientos básicos en Diagramas UML</li>
+        </ul>
+
+        <h4 style="font-size: 0.9rem; color: white; margin-top: 1rem;">Proyecto Destacado:</h4>
+        <p style="font-size: 0.85rem; text-align: left; color: var(--text-muted);">
+            Estudiante con conocimientos básicos en programación y desarrollo web.
+        </p>
+
+        <div style="margin-top: 1rem; padding-top: 0.5rem; border-top: 1px dashed rgba(255,255,255,0.1);">
+            <a href="mailto:alexisguerra@gmail.com" 
+               style="color: var(--secondary-glow); font-size: 0.8rem;">
+               alexisguerra@gmail.com
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="member-card">
+    <img src="assets/Chele.png" alt="Foto Carolina Jasmin Martínez" class="member-img">
+    <h3>Jonathan Esaú Magaña Rodriguez</h3>
+    <p style="color: var(--secondary-glow); font-size: 0.9rem; margin-bottom: 0.5rem;">
+        Estudiante de Ciencias de la Computación
+    </p>
+    <button class="cv-toggle">
+        Ver Hoja de Vida <span class="arrow-icon">▼</span>
+    </button>
+
+    <div class="cv-details">
+
+        <h4 style="font-size: 0.9rem; color: white;">Formación:</h4>
+        <p style="font-size: 0.85rem; text-align: left; color: var(--text-muted);">
+           Universidad Luterna Salvadoreña.
+        </p>
+
+        <h4 style="font-size: 0.9rem; color: white; margin-top: 1rem;">Conocimientos:</h4>
+        <ul>
+            <li>PHP (básico)</li>
+            <li>HTML, CSS y JavaScript (básico)</li>
+            <li>MySQL</li>
+            <li>Bootstrap (básico)</li>
+            <li>Diagramas UML (básico)</li>
+            <li>Visual Studio Code</li>
+            <li>Kotlin (básico)</li>
+        </ul>
+
+        <h4 style="font-size: 0.9rem; color: white; margin-top: 1rem;">Proyecto Destacado:</h4>
+        <p style="font-size: 0.85rem; text-align: left; color: var(--text-muted);">
+            Desarrollo de proyectos académicos utilizando PHP con el framework de Larabel para páginas Web
+        </p>
+
+      
+
+        <div style="margin-top: 1rem; padding-top: 0.5rem; border-top: 1px dashed rgba(255,255,255,0.1);">
+            <a href="mailto:carolina@email.com" 
+               style="color: var(--secondary-glow); font-size: 0.8rem;">
+               jonathan@email.com
+            </a>
+        </div>
+
+        </div> </main>
+
+     <footer class="github-footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; color: white;">
+                    <img src="assets/logo-uls.png" alt="Logo" style="height: 30px; opacity: 0.8;">
+                    
+                </div>
+                <p>
+                    Proyecto académico dedicado a la investigación y difusión de tecnologías web e inteligencia artificial.
+                </p>
+                <div style="margin-top: 1.5rem;">
+                   
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="blog.html">Blog de Noticias</a></li>
+                    <li><a href="#">Recursos API</a></li>
+                    <li><a href="#">Documentación</a></li>
+                    <li><a href="#">Estado del Sistema</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Equipo</h4>
+                <ul>
+                    <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="#">Carreras</a></li>
+                    <li><a href="#">Colaboradores</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal & Ética</h4>
+                <ul>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Ética de IA</a></li>
+                    <li><a href="#">Licencia MIT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                &copy; 2025 Herramientas de inteligencia artificial para el desarrollo web ULS. Todos los derechos reservados.
+            </div>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

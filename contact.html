@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo web | Contacto</title>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/logo-uls.png" alt="ULS Logo" style="height: 40px;">
+            <span></span>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="about.html">Equipo</a></li>
+                <li><a href="blog.html">Artículos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section style="padding: 6rem 5%; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h1 style="font-size: 3rem;">Hablemos de <span class="text-gradient">Código</span></h1>
+                <p style="color: #8b949e; max-width: 600px; margin: 0 auto;">
+                    ¿Tienes una propuesta, encontraste un bug, una nueva IA o quieres colaborar en el proyecto?
+                    Envíanos un mensaje directo.
+                </p>
+            </div>
+
+            <div class="feature-box" style="padding: 3rem; width: 100%; max-width: 700px; background: #161b22; border: 1px solid #30363d;">
+                
+                <form action="https://formspree.io/f/mwvnvdrv" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <label style="color: #38bdf8; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; font-family: 'Fira Code';">Nombre de usuario</label>
+                            <input type="text" name="name" placeholder="Ej: Chele Jonathan" required 
+                                   style="width: 100%; padding: 12px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 6px; outline: none; transition: 0.3s;">
+                        </div>
+                        <div style="flex: 1; min-width: 250px;">
+                            <label style="color: #38bdf8; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; font-family: 'Fira Code';">Email</label>
+                            <input type="email" name="email" placeholder="tu@email.com" required 
+                                   style="width: 100%; padding: 12px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 6px; outline: none; transition: 0.3s;">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label style="color: #38bdf8; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; font-family: 'Fira Code';">Mensaje</label>
+                        <textarea name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required
+                                  style="width: 100%; padding: 12px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 6px; outline: none; font-family: 'Inter'; resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-glow" style="cursor: pointer; border: none; font-size: 1rem; margin-top: 1rem;">
+                        <i class="fas fa-paper-plane"></i> Enviar 
+                    </button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+     <footer class="github-footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; color: white;">
+                    <img src="assets/logo-uls.png" alt="Logo" style="height: 30px; opacity: 0.8;">
+                   
+                </div>
+                <p>
+                    Proyecto académico dedicado a la investigación y difusión de tecnologías web e inteligencia artificial.
+                </p>
+                <div style="margin-top: 1.5rem;">
+                    
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="blog.html">Blog de Noticias</a></li>
+                    <li><a href="#">Recursos API</a></li>
+                    <li><a href="#">Documentación</a></li>
+                    <li><a href="#">Estado del Sistema</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Equipo</h4>
+                <ul>
+                    <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="#">Carreras</a></li>
+                    <li><a href="#">Colaboradores</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal & Ética</h4>
+                <ul>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Ética de IA</a></li>
+                    <li><a href="#">Licencia MIT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+               &copy; 2025 Herramientas de inteligencia artificial para el desarrollo web ULS. Todos los derechos reservados.
+            </div>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    
+    <script>
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.style.borderColor = '#38bdf8';
+                input.style.boxShadow = '0 0 10px rgba(56, 189, 248, 0.1)';
+            });
+            input.addEventListener('blur', () => {
+                input.style.borderColor = '#30363d';
+                input.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

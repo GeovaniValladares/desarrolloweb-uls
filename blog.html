@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo web | Blog</title>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/logo-uls.png" alt="ULS Logo" style="height: 40px;">
+            <span></span>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="about.html">Equipo</a></li>
+                <li><a href="blog.html">Artículos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section style="text-align: center; padding: 4rem 1rem 2rem;">
+            <h1>Actualidad <span class="text-gradient">Tecnológica</span></h1>
+            <p style="color: var(--text-muted);">
+                Las últimas noticias sobre IA, Desarrollo Web y Ciberseguridad en tiempo real.
+            </p>
+        </section>
+
+        <div class="filters-container"
+            style="text-align: center; margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <button id="btn-all" class="btn-glow filter-btn active" onclick="filterNews('tecnologia')">
+                Todas
+            </button>
+
+            <button id="btn-ai" class="btn-glow filter-btn" onclick="filterNews('inteligencia artificial')">
+                IA & Machine Learning
+            </button>
+
+            <button id="btn-sec" class="btn-glow filter-btn" onclick="filterNews('ciberseguridad hacking')">
+                Ciberseguridad
+            </button>
+        </div>
+
+        <div id="loader" style="text-align: center; padding: 3rem;">
+            <div class="spinner"></div>
+            <p style="margin-top: 1rem; color: var(--text-muted); font-family: var(--font-code);">Cargando API...</p>
+        </div>
+
+        <div id="news-container" class="bento-grid">
+        </div>
+
+        <section style="padding: 4rem 5%; border-top: 1px solid #30363d; background: #0d1117;">
+    <h2 style="margin-bottom: 2rem;">Debate en la <span style="color: #27c93f;">Comunidad</span></h2>
+    
+    <div class="feature-box" style="background: #161b22; padding: 2rem;">
+        <div id="disqus_thread"></div>
+    </div>
+</section>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = window.location.href;  
+        this.page.identifier = 'blog-main-page'; 
+    };
+
+    (function() { 
+        var d = document, s = d.createElement('script');
+        
+        // AQUÍ ESTÁ EL CAMBIO: Usamos tu shortname 'jessss'
+        s.src = 'https://jessss.disqus.com/embed.js'; 
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    </main>
+
+     <footer class="github-footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; color: white;">
+                    <img src="assets/logo-uls.png" alt="Logo" style="height: 30px; opacity: 0.8;">
+                   
+                </div>
+                <p>
+                    Proyecto académico dedicado a la investigación y difusión de tecnologías web e inteligencia artificial.
+                </p>
+                <div style="margin-top: 1.5rem;">
+                    
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="blog.html">Blog de Noticias</a></li>
+                    <li><a href="#">Recursos API</a></li>
+                    <li><a href="#">Documentación</a></li>
+                    <li><a href="#">Estado del Sistema</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Equipo</h4>
+                <ul>
+                    <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="#">Carreras</a></li>
+                    <li><a href="#">Colaboradores</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal & Ética</h4>
+                <ul>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Ética de IA</a></li>
+                    <li><a href="#">Licencia MIT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+               &copy; 2025 Herramientas de inteligencia artificial para el desarrollo web ULS. Todos los derechos reservados.
+            </div>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+
+
+</html>
